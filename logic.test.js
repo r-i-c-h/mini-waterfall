@@ -1,17 +1,31 @@
-const {getTallWallIndxs} = require ('./logic');
+// .toBe uses Object.is to test exact equality. For values use .toEqual instead:
+// .not - modifier not.toBe(null)
+const {foo} = require ('./logic');
 
+// const expected = ['Alice', 'Bob'];
+//   it('is true even with rec'd arr contains additional elements', () => {
+//     expect(['Alice', 'Bob', 'Eve']).toEqual(expect.arrayContaining(expected));
+//   });
+//   it('does not match if received does not contain expected elements', () => {
+//     expect(['Bob', 'Eve']).not.toEqual(expect.arrayContaining(expected));
+//   });
 
-test('getWallLimitsObj returns proper values', () => {
-  const miniArr = [1,0,1]
-  expect(getWallLimitsObj(arr)).toBe({
+describe( 'Getting Wall Values', () => {
+  test('returns a value', () => {
+    const arr = [];
+    expect(foo(arr)).not.toBeUndefined() );
+  }
 
-    tallest: 1, tallestIndx: 0, second: , secondIndx: wall2.indx,
-     difference: (wall1.height - wall2.height) }
-  };
+  test('returns a value', () => {
+    const miniArr = [2,0,1];
+    expect(foo(miniArr)).to)
+  }
+
+test('returns a value', () => {
+  const miniArr = [1,0,1];
+  expect(foo(miniArr))..toBe(undefined);
+}
 });
-describe()
-// const arr = [5, 3, 7, 2, 6, 4, 5, 9, 1, 2];
-// const assert = [3, 8, 11];
 
 // TWO HIGHEST COULD BE RIGHT NEXT TO EACH OTHER!
 // THERE COULD BE A /\ SHAPE
