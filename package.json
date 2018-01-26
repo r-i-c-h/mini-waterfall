@@ -1,0 +1,22 @@
+{
+  "name": "mini-waterfall",
+  "version": "0.0.1",
+  "description": "Imagine there are a series of walls.",
+  "main": "logic.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/r-i-c-h/mini-waterfall.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/r-i-c-h/mini-waterfall/issues"
+  },
+  "homepage": "https://github.com/r-i-c-h/mini-waterfall#readme",
+  "dependencies": {
+    "jest": "^22.1.4"
+  }
+}
