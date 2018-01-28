@@ -38,13 +38,12 @@ Now imagine that it rains. The walls would act like buckets and collect water '`
 
 ## Goal: 
 Determine which two **walls** _have the **most water**_ trapped **between** them, and exactly how much water that is.   
-Return value should be a 3-item array in the form of [wall1, wall2, total sum of water 'between' the walls].
+Return value should be a 3-item array in the form of [wall1, wall2, total sum of water between the walls].
 so for the above, the answer is that between wall #3 and wall #8, there are 11 blocks of water.
 
 Therefore Output for the above example: `[3, 8, 11]`
 
 ---
-
 ## The Plan:
 ### Constraints: 
 * Using ints. That's about it. No guarantees there will even be a successful answer.
@@ -60,7 +59,7 @@ Therefore Output for the above example: `[3, 8, 11]`
   * Caveat: If the result is negative, just return 0
 * Scan through the array with a currentSlot from slot[1] to the slot 'one' before the last.
   * As soon as you hit a non-0 value, start a temp answer array:
-    * First value is the currentSlot's index 1  << left boundary
+    * push the currentSlot's index-1 to the temp answer << left boundary
     * initialize a temp running sum as the value of the current slot; 
   * while the next slot is not a zero value, keep adding values to the running sum and moving slot index;
   * once the value of the current slot _is_ a 0 value << right boundary
