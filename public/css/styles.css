@@ -38,6 +38,7 @@ label {
 }
 
 .wrapper {
+  background-color: #faf0a9ff;
   height: 100%;
   display: flex;
   width: 75%;
@@ -53,7 +54,7 @@ label {
 }
 
 .table-display {
-  /* display: grid; */
+  display: grid;
 }
 
 .grid-col {
