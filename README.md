@@ -1,3 +1,4 @@
+Thing's broken. No Testing. No actual client-modularity and in spite of staying up all nighty I'm outta Time.
 # Waterfall Buckets Problem
 ## Challenge:
 Imagine there are a series of walls. 

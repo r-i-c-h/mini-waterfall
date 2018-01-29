@@ -1,4 +1,3 @@
-// r1c1
 const fillTowers = (walls) => {
   const towerValues = walls.map( x => Number(x) );
   towerValues.forEach( (towerHeight, indx) => {

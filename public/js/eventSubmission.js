@@ -22,14 +22,20 @@ inputForm.addEventListener('submit', (e) =>  {
 }, false);
 
 const sendData = (data) => {
+  const url = 'http://localhost:1337/api/';
   const options = {
     headers: {
       'Accept': 'application/json',
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin':'*'
     },
     method: 'POST',
     body: JSON.stringify(data)
   };
+  fetch(url,options)
+  .then(res => res.json())
+  .then( arr => drawGrid() )
+  .catch((err) => { console.error('Uh-OH: ',err); });
 };
 
 const isValid = (str) => {
