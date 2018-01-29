@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Draw Waterfalls</title>
+  <link rel="stylesheet" href="css/styles.css" type="text/css">
+</head>
+<body>
+  <div class="wrapper">
+    <header>
+      <h1> Waterfall Builder </h1>
+    </header>
+    <div class="top">
+      <form id="the_form"> <!-- action="/api" method="POST" target="_self" -->
+        <fieldset>
+        <legend>(Please separate each wall-height value by a space or a comma)</legend>
+          <label for="walls">Wall Height Values:</label>
+          <input type="text" name="walls_input" id="walls" value="1,0,1" required autofocus/>
+          <button type="submit">Click to Submit</button>
+        </fieldset>
+      </form>
+    </div>
+    <div class="bottom">
+      <div class="table-display">
+        
+      </div>
+    </div>
+  </div>
+  <script src="js/client.js"></script>
+</body>
+</html>
