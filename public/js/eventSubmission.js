@@ -3,11 +3,10 @@ const inputForm = document.getElementById('the_form');
 inputForm.addEventListener('submit', (e) =>  {
   e.stopImmediatePropagation();
   e.preventDefault();
-  let inputTxt = document.getElementById('walls');
-  const walls = inputTxt.value;
-  if ( ( isValid(walls)  && ( walls!=='') ) ) {
-    inputTxt.value = '';
-    sendData(walls);
+  let inputStr = document.getElementById('wallHeightsStr');
+  const formData = inputStr.value;
+  if ( ( isValid(formData)  && ( formData!=='') ) ) {
+    sendData(formData);
   } else {
     if ( !(document.getElementById('bad')) ){
       const bad = document.createElement('text');

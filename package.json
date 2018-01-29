@@ -4,7 +4,8 @@
   "description": "Imagine there are a series of walls.",
   "main": "logic.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "start": "nodemon server.js --inspect"
   },
   "repository": {
     "type": "git",

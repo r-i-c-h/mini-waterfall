@@ -5,19 +5,20 @@
 html,body {
   margin: 0;
   height: 100vh;
+  width: 100vw;
 }
 
 body {
   padding: 2%;
   text-align: center;
-  background-color: #faf0a9ff;
+  background: antiquewhite;
 }
 
 input {
   border-radius: 5%;
   font-size: 1.1rem;
   width: 30%;
-  padding-left: 0 10px;
+  padding-left: 10px;
   vertical-align: middle;
 }
 
@@ -38,27 +39,73 @@ label {
 }
 
 .wrapper {
-  background-color: #faf0a9ff;
+  background-color: whitesmoke;
   height: 100%;
   display: flex;
-  width: 75%;
   flex-direction: column;
   align-content: center;
-  padding: 2%;
-  margin: auto;
+  padding: 10px;
+  margin: 0 auto;
 }
 
+.top { height: 10vh; }
 .bottom {
-  margin-top: 2rem;
-  /* border: 1px solid black; */
+  height: 65%;
+  display: none;
+  padding: 10px 0;
 }
 
-.table-display {
-  display: grid;
-}
-
-.grid-col {
-  /* display: flex; */
-  align-content: center;
+.grid-container {
+  display: flex;
   flex-direction: column;
+  align-items: center;
+}
+
+.row{
+  display:flex;
+  flex: 1;
+  /* align-content: center;
+  align-items: center;
+  justify-content:center; */
+}
+
+.col {
+  /* width:10vw;
+  height:10vw; */
+  border: 1px solid black;
+}
+
+.rowIndxNum {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.colIndxNum {
+  text-align: center;
+  border-right:0;
+  border-left:0;
+  border-bottom:0;
+  opacity: 0;
+  font-weight: 600;
+}
+
+.blank {
+  opacity: 0;
+  border: none;
+}
+
+.brick {
+  background: firebrick;
+}
+
+.water {
+  background: aqua;
+}
+
+.magicWall {
+  background: #00000099;
 }
