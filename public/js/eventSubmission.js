@@ -34,9 +34,12 @@ const sendData = data => {
     headers: new Headers( {'Content-Type': 'application/json'} ),
     body: JSON.stringify( {'walls':data} )
   };
+
   fetch(url,options)
   .then( res => res.json() )
-  .then( resJ => console.dir(resJ))
-  // .then( arr => drawGrid() )
+  .then( resArr => {
+    console.log('Response AOK:', resArr);
+    drawGrid(resArr);
+  })
   .catch((err) => { console.error('Uh-OH: ',err); });
 };
