@@ -9,9 +9,27 @@ html,body {
 }
 
 body {
-  padding: 2%;
+  padding: 3vh;
   text-align: center;
-  background: antiquewhite;
+  background: #555577;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 100%;
+  width: 100%;
+  padding: 1vh 1vw;
+  background-color: #EEFFFF;
+}
+
+header {
+  font-size: 2rem;
+  font-weight: bolder;
+  text-transform: uppercase;
+  text-shadow: #4c3D3D22 2px 2px;
+  flex: 0;
 }
 
 input {
@@ -22,14 +40,15 @@ input {
   vertical-align: middle;
 }
 
-button {
-  font-size: .9rem;
-  vertical-align: middle;
+legend {
+  padding-bottom: 1%;
+  font-size: .8rem;
 }
 
 label {
   width: auto;
-  opacity: .4;
+  color: #4c3D3D;
+  opacity: 0.7;
   text-align: right;
   vertical-align: middle;
   font-variant-caps: all-small-caps;
@@ -38,59 +57,66 @@ label {
   font-style: oblique;
 }
 
-.wrapper {
-  background-color: whitesmoke;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-  padding: 10px;
-  margin: 0 auto;
+button {
+  font-size: .9rem;
+  vertical-align: middle;
 }
 
-.top { height: 10vh; }
+.top {
+  flex: 0;
+  margin: 1vh 1vw;
+}
+
 .bottom {
-  height: 65%;
-  display: none;
-  padding: 10px 0;
+  visibility: hidden;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 100%;
+  /* border: blue 2px solid; */
+}
+
+.hasGrid {
+  visibility: visible;
 }
 
 .grid-container {
+  /* border: red 2px solid; */
+  flex: 1;
+  width: 100%;
+  max-width: 80vmin;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  justify-content: center;
 }
 
-.row{
-  display:flex;
-  flex: 1;
-  /* align-content: center;
-  align-items: center;
-  justify-content:center; */
+.row {
+    display: flex;
 }
 
-.col {
-  /* width:10vw;
-  height:10vw; */
+.cell {
   border: 1px solid black;
+  font-weight: bold;
+  flex: 1 1 100%;
+}
+
+.cell:after {
+    content: "";
+    float:left;
+    display: block;
+    padding-top: 100%;
 }
 
 .rowIndxNum {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  align-content: center;
-  font-weight: 600;
-  font-size: 1rem;
-}
-
-.colIndxNum {
-  text-align: center;
-  border-right:0;
-  border-left:0;
-  border-bottom:0;
-  opacity: 0;
-  font-weight: 600;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    font-size: 1rem;;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .blank {
@@ -103,9 +129,9 @@ label {
 }
 
 .water {
-  background: aqua;
+  background: #118888;
 }
 
 .magicWall {
-  background: #00000099;
+  background: #000000DD;
 }

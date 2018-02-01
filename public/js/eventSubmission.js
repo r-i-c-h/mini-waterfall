@@ -37,9 +37,6 @@ const sendData = data => {
 
   fetch(url,options)
   .then( res => res.json() )
-  .then( resArr => {
-    console.log('Response AOK:', resArr);
-    drawGrid(resArr);
-  })
+  .then( resArr => { drawGrid(resArr); })
   .catch((err) => { console.error('Uh-OH: ',err); });
 };

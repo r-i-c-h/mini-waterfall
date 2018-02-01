@@ -1,16 +1,20 @@
-const fillTowers = (walls) => {
+const fillTowers = (walls,leftLimit,rightLimit) => {
   const towerValues = walls.map( x => Number(x) );
   towerValues.forEach( (towerHeight, indx) => {
     const towerCol = indx;
     let row = 1;
     while ( row <= towerHeight ) {
       const idStr = 'r'+row+'c'+towerCol;
-      row++;  
-      document.getElementById(idStr).classList.add('brick');
+      const thisBrick = document.getElementById(idStr)
+      thisBrick.classList.add('brick');
+      if (towerCol === leftLimit || towerCol === rightLimit ){
+        thisBrick.classList.add('magicWall');
+      }
+      row++;
     }
   });
   fillWater(walls);
-}
+};
 
 const fillWater = (towersArr) => {
   const waterAmounts = getPuddles(towersArr);
@@ -24,7 +28,7 @@ const fillWater = (towersArr) => {
       }
     }
   });
-}
+};
 
 const getRightToLeftMaxes = (arr) => {
   let max = 0;
@@ -33,7 +37,7 @@ const getRightToLeftMaxes = (arr) => {
     retArr = [max, ...retArr]
     return retArr;
   },[]);
-}
+};
 
 const getPuddles = (arr) => {
   let max = 0;
@@ -44,4 +48,4 @@ const getPuddles = (arr) => {
     const waterAmt = slotMax - elem;
     return waterAmt < 0 ? 0 : waterAmt;
   });
-}
+};

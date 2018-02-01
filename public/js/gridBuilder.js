@@ -1,43 +1,39 @@
 const gridContainer = document.getElementsByClassName('grid-container')[0];
 
-const makeOneRow = (colCount, rowNum) => {
+const clearGrid = () => {
+  while ( gridContainer.hasChildNodes() ) {
+    gridContainer.childNodes.forEach(x => gridContainer.removeChild(x));
+  }
+};
+
+const makeARow = (colCount, rowNum) => {
   let aRow = document.createElement('div');
   aRow.classList.add('row');
-  aRow.id = 'row' + rowNum;
-
   for (let i = -1; i <= colCount - 1; i++) {
     let aBox = document.createElement('div');
     if (i === -1) {
       aBox.classList.add('rowIndxNum');
-      aBox.textContent = rowNum || '';
+      aBox.textContent = rowNum;
     }
-    aBox.classList.add('col');
-    const idTxt = 'r'.concat(String(rowNum), 'c', i);
-    aBox.id = idTxt;
+    aBox.classList.add('cell');
+    aBox.id = 'r'.concat(rowNum, 'c', i);
     aRow.appendChild(aBox);
   }
   gridContainer.appendChild(aRow);
 };
 
-const drawGrid = () => {
+const drawGrid = (resArr) => {
   const formStr = document.getElementById('wallHeightsStr').value;
-  const wallValsArr = formStr.split(/[\s,]/g);
-  const numEntries = wallValsArr.length;
-  const boxSize = 90 / (1.5 * numEntries);
-  while (gridContainer.hasChildNodes()) {
-    gridContainer.childNodes.forEach(x => gridContainer.removeChild(x));
-  }
-  gridContainer.parentElement.style.display = 'inline-block';
-  let boxCount = numEntries;
-  while (boxCount > 0) {
-    makeOneRow(numEntries, boxCount);
-    boxCount--;
+  const wallValsArr = formStr.split(/\s|,/g).map( x => Number(x) );
+  const height = Math.max.apply(null, wallValsArr);
+  const width = wallValsArr.length;
+  gridContainer.parentElement.classList.add('hasGrid');
+  clearGrid();
+
+  const minGraphHeight = Math.max(height,10);
+  for (let rowCounter = minGraphHeight; rowCounter > 0; rowCounter--) {
+    makeARow(width, rowCounter);
   }
 
-  document.querySelectorAll('.col').forEach(box => {
-    box.style.width = String(boxSize).concat('vmin');
-    box.style.height = String(boxSize).concat('vmin');
-  });
-
-  fillTowers(wallValsArr);
+  fillTowers(wallValsArr,resArr[0],resArr[1]);
 };
